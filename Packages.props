@@ -49,7 +49,7 @@
     <AspNetCoreMvcTestingVersionN4>$(AspNetCoreVersion5)</AspNetCoreMvcTestingVersionN4>
     <!-- Build & Samples -->
     <BlazoriseVersion>1.1.*</BlazoriseVersion>
-    <StlFusionVersion>4.2.*</StlFusionVersion>
+    <StlFusionVersion>4.3.*</StlFusionVersion>
   </PropertyGroup>
 
   <ItemGroup Label="Package Versions">
@@ -103,7 +103,7 @@
     <PackageReference Update="MySqlConnector" Version="$(MySqlConnectorVersion)" />
     <PackageReference Update="Npgsql" Version="$(EntityFrameworkCoreVersion)" />
     <PackageReference Update="Npgsql.EntityFrameworkCore.PostgreSQL" Version="$(EntityFrameworkCoreNpgsqlVersion)" />
-    <PackageReference Update="Microsoft.Identity.Web" Version="1.25.*" />
+    <PackageReference Update="Microsoft.Identity.Web" Version="2.5.*" />
     <PackageReference Update="MsgPack.Cli" Version="1.0.*" />
     <PackageReference Update="Newtonsoft.Json" Version="$(NewtonsoftJsonVersion)" />
     <PackageReference Update="Pluralize.NET" Version="1.0.*" />
@@ -118,7 +118,7 @@
     <PackageReference Update="System.CommandLine.DragonFruit" Version="0.3.0-alpha.21216.1" />
     <PackageReference Update="System.Diagnostics.Common" Version="$(SystemXxxVersion)" />
     <PackageReference Update="System.Drawing.Common" Version="$(SystemXxxVersion)" />
-    <PackageReference Update="System.IO.Abstractions" Version="19.1.5" />
+    <PackageReference Update="System.IO.Abstractions" Version="19.2.4" />
     <PackageReference Update="System.Linq.Async" Version="$(SystemXxxVersion6)" />
     <PackageReference Update="System.Net.Http.Json" Version="$(SystemXxxVersion)" />
     <PackageReference Update="System.Net.WebSockets" Version="4.3.*" />
@@ -142,12 +142,12 @@
     <PackageReference Update="System.Reflection.Emit.Lightweight" Version="4.7.0" />
     
     <!-- Test time only -->
-    <PackageReference Update="AutoFixture.AutoMoq" Version="4.17.*" />
+    <PackageReference Update="AutoFixture.AutoMoq" Version="4.18.*" />
     <PackageReference Update="coverlet.collector" Version="3.2.0" PrivateAssets="all" IncludeAssets="runtime; build; native; contentfiles; analyzers" />
-    <PackageReference Update="FluentAssertions" Version="6.9.*" />
+    <PackageReference Update="FluentAssertions" Version="6.10.*" />
     <PackageReference Update="ILogger.Moq" Version="1.1.*" />
     <PackageReference Update="Microsoft.AspNetCore.Mvc.Testing" Version="$(AspNetCoreMvcTestingVersion)" />
-    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.4.1" />
+    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.5.0" />
     <PackageReference Update="Moq" Version="4.18.*" />
     <PackageReference Update="xunit" Version="2.4.2" />
     <PackageReference Update="Xunit.DependencyInjection.Logging" Version="8.0.*" />
@@ -165,7 +165,7 @@
     <!-- Analyzers -->
     <PackageReference Update="Moq.Analyzers" Version="0.0.9" PrivateAssets="all" IncludeAssets="runtime; build; native; contentfiles; analyzers"/>
     <PackageReference Update="xunit.analyzers" Version="1.1.0" PrivateAssets="All" IncludeAssets="runtime; build; native; contentfiles; analyzers" />
-    <PackageReference Update="Microsoft.VisualStudio.Threading.Analyzers" Version="17.4.*" PrivateAssets="All" IncludeAssets="runtime; build; native; contentfiles; analyzers" />
+    <PackageReference Update="Microsoft.VisualStudio.Threading.Analyzers" Version="17.5.*" PrivateAssets="All" IncludeAssets="runtime; build; native; contentfiles; analyzers" />
     <PackageReference Update="Roslynator.Analyzers" Version="4.2.*" PrivateAssets="All" IncludeAssets="runtime; build; native; contentfiles; analyzers"/>
     <PackageReference Update="Meziantou.Analyzer" Version="2.0.*" PrivateAssets="All" IncludeAssets="runtime; build; native; contentfiles; analyzers"/>
   </ItemGroup>
