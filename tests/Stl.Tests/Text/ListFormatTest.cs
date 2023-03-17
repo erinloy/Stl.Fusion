@@ -1,3 +1,5 @@
+using Cysharp.Text;
+
 namespace Stl.Tests.Text;
 
 public class ListFormatTest : TestBase
@@ -22,7 +24,8 @@ public class ListFormatTest : TestBase
         var list = p.ParseAll().ToList();
         list.Count.Should().Be(length);
 
-        using var f = ListFormat.Default.CreateFormatter();
+        var outputBuilder = ZString.CreateStringBuilder();
+        using var f = ListFormat.Default.CreateFormatter(ref outputBuilder);
         f.Append(list);
         f.Output.Should().Be(expectedFormat);
     }
@@ -50,9 +53,9 @@ public class ListFormatTest : TestBase
         var l2 = listFormat.Parse(value);
         l2.Should().BeEquivalentTo(l);
 #if NET5_0_OR_GREATER || NETCOREAPP
-        l2 = listFormat.Parse((ReadOnlySpan<char>) value, new List<string>());
+        l2 = listFormat.Parse(value, new List<string>());
         l2.Should().BeEquivalentTo(l);
-        l2 = listFormat.Parse((ReadOnlySpan<char>) value);
+        l2 = listFormat.Parse(value);
         l2.Should().BeEquivalentTo(l);
 #endif
 

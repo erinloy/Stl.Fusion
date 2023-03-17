@@ -1,3 +1,4 @@
+using Cysharp.Text;
 using Newtonsoft.Json.Serialization;
 using Stl.Serialization.Internal;
 
@@ -48,7 +49,8 @@ public class TypeDecoratingSerializer : TextSerializerBase
 
     public override string Write(object? value, Type type)
     {
-        using var f = ListFormat.Default.CreateFormatter();
+        var outputBuilder = ZString.CreateStringBuilder();
+        using var f = ListFormat.Default.CreateFormatter(ref outputBuilder);
         if (value == null) {
             // Special case: null serialization
             f.Append("");

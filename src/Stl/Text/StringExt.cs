@@ -1,3 +1,5 @@
+using Cysharp.Text;
+
 namespace Stl.Text;
 
 public static class StringExt
@@ -5,7 +7,8 @@ public static class StringExt
     public static string ManyToOne(IEnumerable<string> values) => ManyToOne(values, ListFormat.Default);
     public static string ManyToOne(IEnumerable<string> values, ListFormat listFormat)
     {
-        using var f = listFormat.CreateFormatter();
+        var outputBuilder = ZString.CreateStringBuilder();
+        using var f = listFormat.CreateFormatter(ref outputBuilder);
         foreach (var value in values)
             f.Append(value);
         f.AppendEnd();

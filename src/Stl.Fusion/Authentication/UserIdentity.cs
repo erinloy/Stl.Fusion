@@ -1,3 +1,5 @@
+using Cysharp.Text;
+
 namespace Stl.Fusion.Authentication;
 
 [DataContract]
@@ -55,7 +57,8 @@ public readonly struct UserIdentity : IEquatable<UserIdentity>
 
     private static string FormatId(string schema, string schemaBoundId)
     {
-        using var f = IdFormat.CreateFormatter();
+        var outputBuilder = ZString.CreateStringBuilder();
+        using var f = IdFormat.CreateFormatter(ref outputBuilder);
         if (!StringComparer.Ordinal.Equals(schema, DefaultSchema))
             f.Append(schema);
         f.Append(schemaBoundId);

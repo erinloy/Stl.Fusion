@@ -1,3 +1,4 @@
+using Cysharp.Text;
 using Stl.Fusion.Interception;
 
 namespace Stl.Fusion.Swapping;
@@ -36,7 +37,8 @@ public abstract class SwapServiceBase : ISwapService
 
     protected virtual string SerializeKey(ComputeMethodInput input, LTag version)
     {
-        using var f = ListFormat.Default.CreateFormatter();
+        var outputBuilder = ZString.CreateStringBuilder();
+        using var f = ListFormat.Default.CreateFormatter(ref outputBuilder);
         var methodDef = input.MethodDef;
         f.Append(methodDef.InvocationTargetHandler.ToStringFunc(input.Target));
         f.Append(version.ToString());
